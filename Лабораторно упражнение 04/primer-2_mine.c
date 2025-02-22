@@ -17,23 +17,24 @@ getchar се използва да прочете останалия в буфе
 обработва от scanf. Върнатият символ не се запазва, защото няма да се използва.
 Добавено е броене на обработените стойности (br), за да се покаже, че се обработват само
 коректно въведените данни.
-
 */
 
 #include <stdio.h>
 
 int main()
 {
-	int input;
-	int sum, br;
-	int res;
-	sum = br = 0;
+	int input, sum;
+	int res = 0;
+	sum = 0;
+	int br = 0;
+
+	printf("Enter value:\n");
+
 	
-	printf("Enter value:");
-	
-	while((res = scanf("%d", &input)) != EOF)
+	while ((res = scanf("%d", &input)) != EOF)
 	{
-		if (!res)
+	
+		if(!res)
 		{
 			getchar();
 			printf("Enter value: \n");
@@ -41,35 +42,18 @@ int main()
 		}
 		
 		br++;
-		
-		if (input % 2 == 0)
+	
+		if(input % 2 == 0)
 		{
 			sum += input;
-		
 		}
 		
-		printf("Enter value:");
+		printf("Enter value:\n");
+
 	}
 	
-	printf("Sum of even numbers: %d\n", sum);
-	printf("Value count: %d\n", br);
+	printf("The sum is: %d.\n", sum);
+	printf("Number of values: %d\n", br);
 	
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
