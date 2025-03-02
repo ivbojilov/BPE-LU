@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-void change(int a);
+void change(int a); // параметърът е обикновена променлива
 
 int main()
 {
